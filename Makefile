@@ -1,5 +1,9 @@
-PANDOC_LATEX=--latex-engine=xelatex --smart
-#PANDOC_LATEX=--pdf-engine=xelatex -smart
+PANDOC_MAJOR_VERSION := $(shell pandoc --version | head -n1 | sed -e 's/^\S*\s//;s/\..*${}//;')
+ifeq ($(PANDOC_MAJOR_VERSION), 1)
+	PANDOC_LATEX := --latex-engine=xelatex --smart
+else
+	PANDOC_LATEX := --pdf-engine=xelatex -smart
+endif
 
 .PHONY: all article
 all: article
