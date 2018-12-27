@@ -2,14 +2,26 @@
 title: うおォン 俺はまるで人間輪転機だ
 subtitle: 〜キムワイプ印刷の紙とインク〜
 author: どら饅頭
+documentclass: scrartcl
+classoption:
+  - 8pt
+  - a5paper
+  - onecolumn
+geometry: margin=15mm
+urlcolor: blue
+indent: true
 header-includes:
   - \usepackage{multicol}
+  - \usepackage{indentfirst}
   - \newcommand{\hideFromPandoc}[1]{#1}
   - \hideFromPandoc{
       \let\Begin\begin
       \let\End\end
       \let\Newpage\newpage
     }
+  - \usepackage{caption}
+  - \renewcommand{\figurename}{図}
+  - \captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={\figurename}}
 ---
 
 \Begin{multicols}{2}
@@ -31,11 +43,11 @@ header-includes:
 
 紙ウエスへの印刷の品質は、紙質とインクに強く依存します。
 特にインクは、水分の蒸発により粘性が変化するため、管理が手間になります。
-**Figure 1** に、紙種とインク濃度に対するスクリーン印刷の結果を示します。
+**\figurename\ \ref{fig:paper-ink-quality}** に、紙種とインク濃度に対するスクリーン印刷の結果を示します。
 
 \End{multicols}
 
-![紙質、インク濃度と印刷品質](images/image.png){width=100%}
+![紙質、インク濃度と印刷品質\label{fig:paper-ink-quality}](images/image.png){width=100%}
 
 
 \Newpage

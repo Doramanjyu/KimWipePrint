@@ -12,5 +12,5 @@ branches:
 
 install:
   - pip install --user --upgrade gh-pr-comment boto3
-  - docker run --rm -it -v `pwd`:/work seqsense/pandoc-noto make
+  - docker run --rm -it -v `pwd`:/work seqsense/pandoc-noto:2.5 make
   - gh-pr-comment "Build results" "- [Generated PDF (1)](`gh-pr-upload article.pdf`)"
