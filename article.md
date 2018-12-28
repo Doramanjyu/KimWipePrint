@@ -4,27 +4,29 @@ subtitle: 〜キムワイプ印刷の紙とインク〜
 author: どら饅頭
 documentclass: scrartcl
 classoption:
-  - 8pt
+  - 9pt
   - a5paper
   - twocolumn
+  - flushbottom
+  - titlepage=true
 geometry: margin=15mm
 urlcolor: blue
 indent: true
 header-includes:
-  - \usepackage{fancyhdr}
+  - \usepackage[headsepline,automark]{scrlayer-scrpage}
+  - \KOMAoptions{headsepline=0.25pt:\textwidth}
+  - \KOMAoptions{footsepline=0.25pt:\textwidth}
+  - \pagestyle{scrheadings}
+  - \ihead{}
+  - \ohead{}
+  - \chead{\pagemark}
+  - \cfoot[]{}
+  - \sectionmark{}
   - \usepackage{indentfirst}
   - \usepackage{caption}
   - \renewcommand{\figurename}{図}
   - \captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={\figurename}}
 ---
-
-\fancyhead{}
-\fancyhead[RO,RE]{\thepage}
-\fancyhead[LE,LO]{うおォン 俺はまるで人間輪転機だ}
-\fancyfoot{}
-\pagestyle{fancy}
-\thispagestyle{empty}
-
 
 # はじめに
 
