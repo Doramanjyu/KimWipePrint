@@ -85,7 +85,7 @@ Tシャツくんスクリーンの製品としては、線幅1 mm以上が推奨
 \end{figure}
 
 \begin{figure*}[b]
-\centering\includegraphics[width=\linewidth]{images/comparizon.png}
+\centering\includegraphics[width=\linewidth]{images/comparizon.pdf}
 \caption{紙質、インク粘性と印刷品質}
 \label{fig:paper-ink-quality}
 \end{figure*}
