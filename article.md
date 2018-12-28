@@ -13,6 +13,7 @@ geometry: margin=15mm
 urlcolor: blue
 indent: true
 header-includes:
+  - \usepackage{dblfloatfix}
   - \usepackage[headsepline,automark]{scrlayer-scrpage}
   - \KOMAoptions{headsepline=0.25pt:\textwidth}
   - \KOMAoptions{footsepline=0.25pt:\textwidth}
@@ -23,9 +24,23 @@ header-includes:
   - \cfoot[]{}
   - \sectionmark{}
   - \usepackage{indentfirst}
+  - \usepackage{afterpage}
+  - \usepackage{float}
   - \usepackage{caption}
   - \renewcommand{\figurename}{図}
   - \captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={\figurename}}
+  - \setcounter{topnumber}{3}
+  - \setcounter{bottomnumber}{3}
+  - \setcounter{totalnumber}{3}
+  - \setcounter{dbltopnumber}{2}
+  - \renewcommand{\topfraction}{1.0}
+  - \renewcommand{\bottomfraction}{0.9}
+  - \renewcommand{\dbltopfraction}{1.0}
+  - \renewcommand{\textfraction}{0.1}
+  - \renewcommand{\floatpagefraction}{1.0}
+  - \renewcommand{\dblfloatpagefraction}{1.0}
+  - \setlength{\abovecaptionskip}{0.2em}
+  - \setlength{\belowcaptionskip}{0.5em}
 ---
 
 # はじめに
@@ -35,7 +50,11 @@ header-includes:
 はじまりは、簡易なイラストを印刷したフリーペーパー(2014/11/23 COMITIA X-4 で配布、 **\figurename\ \ref{fig:first-wipe-print}**)でした。
 これがいつの間にかエスカレートし、キムワイプの本文とキムタオルの表紙に、国内版と海外版のキムワイプの違いについて紹介する擬人化マンガを印刷し[1]、今では複数種の紙ウエスにそれぞれの擬人化マンガを印刷した同人誌[2]を頒布する始末です。
 
-![はじめてのキムワイプ印刷 COMITIA X-4 \label{fig:first-wipe-print}](images/wipe.jpg){width=50%}
+\begin{figure}[h]
+\centering\includegraphics[width=\linewidth]{images/wipe.jpg}
+\caption{はじめてのキムワイプ印刷 COMITIA X-4}
+\label{fig:first-wipe-print}
+\end{figure}
 
 これまでに行ってきた、キムワイプをはじめとする紙ウエスへの同人誌印刷の経験の中では、湿度の低下によるインク濃度の変動や、紙ウエスの品種ごとに大幅に異なるにじみの特性に振り回されてきました。
 本誌では、新たにキムワイプへの印刷を目指す同人作家の皆さまを主なターゲットとし、4年に渡る試行錯誤の結果として得られた知見をまとめます。
@@ -47,27 +66,35 @@ header-includes:
 版を制作するための感光スクリーンとしては、**\figurename\ \ref{fig:screen}**に例を示すような、太陽精機のTシャツくん ミドルスクリーンが容易に入手できます。
 ただし、感光スクリーンは経時劣化が早く、製造から時間が立つと、現像不良を引き起こしやすくなる点に注意が必要です。
 
-![キムワイプ印刷に用いるスクリーン\label{fig:screen}](images/screen.jpg){width=50%}
+\begin{figure}[t]
+\centering\includegraphics[width=\linewidth]{images/screen.jpg}
+\caption{キムワイプ印刷に用いるスクリーン}
+\label{fig:screen}
+\end{figure}
 
 スクリーンの線数(網目の細かさ)は、後に説明するように、インクの粘性を高く保つ必要があるため、目詰まりの頻度を下げるためには、比較的粗い80から120線/インチ程度を使用するとよいでしょう。
 一方、粗い目のスクリーンでは、細い線を再現できないため、原稿作成の際に考慮する必要があります。
-Tシャツくんスクリーンの製品としては、線幅1mm以上が推奨されていますが、概ね0.5mm以上の線幅があれば、印刷が可能でした。
+Tシャツくんスクリーンの製品としては、線幅1 mm以上が推奨されていますが、概ね0.5 mm以上の線幅があれば、印刷が可能でした。
 
 スクリーンを用いた製版には紫外線を用いた感光が必要ですが、感光時間の調整を行うために、ブラックライトのような一定強度の紫外線を照射できる機材を用意するとよいでしょう。
 例えば、高さ200 mmに10 Wの蛍光ランプFL10BLBを2本設置して、80 g/m$^{2}$ の普通紙にレーザープリントしたものを原版とし、厚さ2 mmのPET板でおさえた場合、露光時間35分が適正でした。
 なお、ガラスやアクリルは紫外線をほとんど吸収するため、版の押さえにはPET樹脂のような紫外線透過率の高いものを用います。
+
+\begin{figure}[b]
+\hfill\includegraphics[width=0.9\linewidth]{images/image.png}
+\end{figure}
+
+\begin{figure*}[b]
+\centering\includegraphics[width=\linewidth]{images/comparizon.png}
+\caption{紙質、インク粘性と印刷品質}
+\label{fig:paper-ink-quality}
+\end{figure*}
 
 原版と感光スクリーンの間に隙間があると、像がボケて感光過多になるため、スプレーのり等で接着してから露光を開始します。
 このスプレーのりは、現像の際に水につければ、容易に剥離します。
 現像の際は、版をこすらずに、シャワーの水圧のみで未露光部分を除去すると、細い線も含めて再現性の高い製版が可能です。
 現像後は、再び紫外線を照射し、完全に硬化させることで版の耐久性を高めます。
 
-
-\begin{figure*}[t]
-\centering\includegraphics[width=\linewidth]{images/comparizon.png}
-\caption{紙質、インク粘性と印刷品質}
-\label{fig:paper-ink-quality}
-\end{figure*}
 
 # 紙とインクと印刷品質
 
@@ -87,13 +114,13 @@ JKワイパーとワイプオールは、表面にエンボス加工・クレー
 
 # 季節は流れて
 
-紙ウエスのほん2 [2]は、2018年8月に初版、2018年12月に第2版を発行しましたが、印刷品質の差が発生してしまいました。
+紙ウエスのほん2 [2]は、2018年8月に初版、2018年12月に第2版を発行しましたが、2版の印刷品質が若干悪化するトラブルが発生してしまいました。
+
 8月は湿度が高い中、更に加湿器を使用して100パーセントに近い湿度を維持した状態で印刷作業を行えるため、インクの粘性の変化を最小限に抑えることができます。
-一方の12月は、気温が低く、暖房を使用しないと手先の作業性に問題があるため、加湿器、シャワー、やかん等を用いて湿度を高めながら作業を行いました。
-このとき、冬の乾燥した空気に対して加湿が追いつかず、10分程度で明らかにインクの粘性が変化していました。
+一方の12月は、気温が低く、暖房を使用しないと手先の作業性に問題があるため、加湿器、シャワー、やかん等を用いて湿度を高めながら作業を行います。
+ところが、冬の乾燥した空気に対して加湿が追いつかず、10分程度で明らかにインクの粘性が変化する状態での印刷作業を余儀なくされ、印刷のかすれ等が多数発生しています。
 
-
-
+より高品質な印刷を、時期によらずに実現するためには湿度の制御が必要になり、大型の加湿器を利用したりや、浴室で作業を行うなどが効果的と考えられます。
 
 
 # 参考文献
@@ -101,3 +128,35 @@ JKワイパーとワイプオールは、表面にエンボス加工・クレー
 - [1] どら饅頭, **紙ウエスのほん**, 2017/4
 - [2] どら饅頭, **紙ウエスのほん2**, 2018/8
 
+\clearpage
+\newpage
+
+\onecolumn
+
+
+\begin{table}[h]
+\vspace{30em}
+\centering
+\begin{tabular}{c}
+\LARGE\bf うおォン 俺はまるで人間輪転機だ \\
+\Large 〜キムワイプ印刷の紙とインク〜 \\
+\hline \\
+\large どら饅頭屋 \\
+\small http://doramanjyu.com/ \\
+\small twitter: @doramanjyu \\
+\\
+\bf 初版発行 \\
+2018年12月31日 コミックマーケット95 \\
+\\
+\bf 発行人 \\
+どら饅頭
+\end{tabular}
+\end{table}
+
+\begin{minipage}{0.2\linewidth}
+\includegraphics[width=\linewidth]{images/cc-by-sa.pdf}
+\end{minipage}
+\begin{minipage}{0.75\linewidth}
+この同人誌は クリエイティブ・コモンズ 表示-継承 3.0 非移植 ライセンスの下に提供されています。
+\end{minipage}
+\hfill
