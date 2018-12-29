@@ -1,6 +1,6 @@
 ---
-title: うおォン 俺はまるで人間輪転機だ
-subtitle: 〜キムワイプ印刷の紙とインク〜
+title: キムワイプに同人誌を刷る２
+subtitle: ～うおォン 俺はまるで人間輪転機だ～
 author: どら饅頭
 documentclass: scrartcl
 classoption:
@@ -46,8 +46,13 @@ header-includes:
 ---
 
 \thispagestyle{empty}
-\hspace{10em}
+\onecolumn
+\begin{figure}[t]
+\vspace{10em}
+\hfill\includegraphics[width=\linewidth]{images/cover.png}
+\end{figure}
 \clearpage
+\twocolumn
 
 # はじめに
 
@@ -203,8 +208,8 @@ JKワイパーとワイプオールは、表面にエンボス加工・クレー
 \vspace{30em}
 \centering
 \begin{tabular}{c}
-\LARGE\bf うおォン 俺はまるで人間輪転機だ \\
-\Large 〜キムワイプ印刷の紙とインク〜 \\
+\LARGE\bf キムワイプに同人誌を刷る２ \\
+\Large ～うおォン 俺はまるで人間輪転機だ～ \\
 \hline \\
 \large どら饅頭屋 \\
 \small http://doramanjyu.com/ \\
