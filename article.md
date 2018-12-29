@@ -9,7 +9,7 @@ classoption:
   - twocolumn
   - flushbottom
   - titlepage=true
-geometry: margin=15mm
+geometry: margin=15mm, top=18mm, bottom=18mm
 urlcolor: blue
 indent: true
 header-includes:
@@ -139,6 +139,13 @@ JKワイパーとワイプオールは、表面にエンボス加工・クレー
 もともとの粘度が比較的高いため、均一に混合するためには、練りながら少量ずつ水を加える必要があります。
 
 また、作業を中断する際には、濡れ布巾とともにビニール袋に入れておくことで、乾燥を防ぐのが有効です。
+
+
+# キムワイプ印刷
+
+
+# おわりに
+
 
 
 # 参考文献
