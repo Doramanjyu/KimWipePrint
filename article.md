@@ -174,19 +174,15 @@ JKワイパーとワイプオールは、表面にエンボス加工・クレー
 本誌では、キムワイプをはじめとする紙ウエスに同人誌を印刷するために必要な知見をまとめました。
 これらが、新たにキムワイプへの印刷を目指す方の参考になれば幸いです。
 
-
 \newpage
-\begin{figure}[b]
-\hfill\includegraphics[width=\linewidth]{images/image.png}
-\end{figure}
-
-
 # 参考文献
 
 \begin{itemize}
 \setlength\itemsep{-0.2em}
-\item[] [1] どら饅頭屋, ``紙ウエスのほん'', 2017/4
-\item[] [2] どら饅頭屋, ``紙ウエスのほん2'', 2018/8
+\item[] [1] どら饅頭屋, ``紙ウエスのほん'', 2017/4 \hfill
+\includegraphics[width=\linewidth]{images/kamiuesu1.jpg}
+\item[] [2] どら饅頭屋, ``紙ウエスのほん2'', 2018/8 \hfill
+\includegraphics[width=\linewidth]{images/kamiuesu2.jpg}
 \end{itemize}
 
 \clearpage
